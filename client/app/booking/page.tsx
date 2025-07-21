@@ -1,8 +1,17 @@
-// 📁 src/pages/BookingSuccess.tsx
+"use client";
+
+// 📁 src/pages/Booking.tsx
 import { sendZaloConfirmation } from '@/services/znsService';
 import React from 'react';
 
-function BookingSuccess({ zaloId }: { zaloId: string }) {
+function Booking() {
+  // Example: get zaloId from search params (adjust as needed)
+  // import { useSearchParams } from 'next/navigation';
+  // const searchParams = useSearchParams();
+  // const zaloId = searchParams.get('zaloId') ?? '';
+
+  const zaloId = ''; // Set zaloId appropriately
+
   const handleSendZNS = async () => {
     try {
       const result = await sendZaloConfirmation(zaloId, 'Tài xế A', '0901234567');
@@ -23,4 +32,4 @@ function BookingSuccess({ zaloId }: { zaloId: string }) {
   );
 }
 
-export default BookingSuccess;
+export default Booking;
